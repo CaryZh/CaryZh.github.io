@@ -1,0 +1,49 @@
+.all-label ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.all-label ul::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.all-label ul li {
+  margin: 10px;
+  float: left;
+  font-size: 15px;
+  padding: 8px;
+}
+.all-label ul li.title {
+  color: gray;
+}
+.all-label ul li.active {
+  color: white;
+  background: skyblue;
+  border-radius: 5px;
+}
+.all-label ul li:hover {
+  cursor: pointer;
+}
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+.list li {
+  margin-left: 20px;
+}
+.list li .content {
+  color: gray;
+  font-size: 10px;
+}
+.list li .title {
+  width: 200px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.list img {
+  width: 200px;
+}
+/*# sourceMappingURL=./style.css.map */

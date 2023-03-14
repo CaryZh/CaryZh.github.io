@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./悬浮小球.css">
+
+</head>
+
+
+<body>
+    <div class="box">
+        <div class="middle">
+            <div class="small">
+                <!-- 中间图片 -->
+                <div class="circle"></div>
+            </div>
+            <div class="change">
+                <!-- 播放按钮 -->
+                <!-- 切换按钮 -->
+                <div class="right">
+                    <img src="./play-next.png">
+                </div>
+                <div class="left">
+                    <img src="./play-previous.png">
+                </div>
+
+                <!-- 弹出列表按钮 -->
+                <div class="list">
+                    <div class="title">
+                        <div class="text">
+                    </div>
+                        <img src="./列表.png">
+                    </div>
+
+                </div>
+            </div>
+            <div class="play">
+                <img src="./暂停.png">
+            </div>
+        </div>
+        <audio src="./林俊杰 - 裹着心的光.mp3"></audio>
+    </div>
+    <script>
+        // 获取播放键
+        var player = document.querySelector(".play img");
+        var audioEle = document.getElementsByTagName("audio")[0];
+        var circle = document.querySelector(".small .circle")
+        // console.log(audioEle);
+        console.log(player);
+        // 给播放键绑定点击事件
+        // 定义开关状态
+        var open = false;
+        // var state = circle.style['animationPlayState'];
+        player.onclick = function () {
+            if (open) {
+                player.src = "./暂停.png";
+                audioEle.pause();
+                // circle.css( "animation-play-state: pause;")
+                open = false;
+                // circle.style.animation = "none"
+                circle.style.webkitAnimationPlayState = "paused";
+                // state === 'pause';
+
+            } else {
+                player.src = "./播放.png";
+                audioEle.play();
+                open = true;
+                // console.log(window.getComputedStyle(circle).animation);
+                circle.style.animation = "move 10s linear infinite"
+                // circle.style.webkitAnimationPlayState = "running";
+                // circle.style( "animation-play-state: running;")
+            }
+        }
+        // 获取上下首元素
+        var leftButton = document.querySelector(".left img");
+        console.log(leftButton);
+        var rightButton = document.querySelector(".right img");
+        console.log(rightButton);
+        var currentsong = 0;
+        var songlist = [{name:"裹着心的光", src: "./林俊杰 - 裹着心的光.mp3", img: "url(https://tse4-mm.cn.bing.net/th/id/OIP-C.uqktjZWnM3kcbCeIlfNG_AAAAA?pid=ImgDet&rs=1)center center / 99% 99% no-repeat" }, { name:"我记得",src: "./赵雷 - 我记得.mp3", img: "url(https://ts1.cn.mm.bing.net/th/id/R-C.bd80bc3a56cafd692a3a6316706ef3e5?rik=z2n%2f%2fN728XgPdQ&riu=http%3a%2f%2fp1.music.126.net%2fFCWD6ibS2JK2B3QAnXuzwQ%3d%3d%2f109951167805892385.jpg&ehk=E05J9d3DoBC8hx6sGW4BQKXWKdmmUiR%2fVFYiYG0lLfo%3d&risl=&pid=ImgRaw&r=0)center center / 99% 99% no-repeat" }, { name:"浪漫主义 2.0",src: "./姜云升 - 浪漫主义2.0.mp3", img: "url(https://ts1.cn.mm.bing.net/th/id/R-C.4ca48927c3922b2bc7976bfb00412498?rik=Z4Ya0qMsl54Pew&riu=http%3a%2f%2fyweb1.cnliveimg.com%2f1423%2fimg%2f2022%2f0214%2f1644821945977.jpg&ehk=1cT%2fa4sf29cFGe5Z64nNpVAnwb1MOQcNlAxC2b%2f1LlU%3d&risl=&pid=ImgRaw&r=0)center center / 99% 99% no-repeat" }];
+        leftButton.onclick = function () {
+            if (currentsong == 0) {
+                currentsong = songlist.length - 1;
+            } else {
+                currentsong--;
+            }
+            audioEle.src = songlist[currentsong].src;
+            circle.style.background = songlist[currentsong].img;
+        }
+
+        rightButton.onclick = function () {
+            if (currentsong == songlist.length - 1) {
+                currentsong = 0;
+            } else {
+                currentsong++;
+            }
+            audioEle.src = songlist[currentsong].src;
+            circle.style.background = songlist[currentsong].img;
+        }
+        // 获取列表
+        var textlist = document.querySelector(".text");
+        // console.log(textlist);
+        var str='';
+        // 渲染列表
+        for(i=0;i<songlist.length;i++){
+        str+= "<li>"+songlist[i].name+"</li>";
+            }
+            textlist.innerHTML=str;
+
+
+
+
+
+    </script>
+</body>
+
+</html>

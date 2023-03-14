@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .card{
+        width: 156px;
+        height: 156px;
+        background-image: url("./动画.png");
+        animation: mi 1s steps(45) infinite;
+        margin:100px auto
+
+    }
+    @keyframes mi {
+        from {
+          background-position-x: 0px;
+        }
+        to {
+          background-position-x: -7020px;
+        }
+      }
+</style>
+<body>
+<div class="card"></div>
+</body>
+</html>

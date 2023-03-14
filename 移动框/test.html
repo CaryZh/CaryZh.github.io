@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: block;
+
+        }
+
+        .box {
+            width: 965px;
+            height: 563px;
+            background-color: #ffffff;
+            margin: 50px auto;
+            /* position: relative; */
+            display: flex;
+            justify-content: space-between;
+            box-shadow: 2px 2px 4px 4px #cccc;
+            padding: 13px 29px 13px 13px;
+            box-sizing: border-box;
+            overflow: hidden;
+
+        }
+
+        .big {
+            width: 742px;
+            overflow: hidden;
+            margin-top: 0;
+
+        }
+
+        .big img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 30px;
+
+
+        }
+
+        .small {
+            position: relative;
+        }
+
+        .small img {
+            width: 149px;
+            height: 81px;
+            display: block;
+            margin-bottom: 32px;
+            border-radius: 5px;
+            opacity: 0.5;
+            z-index: 50;
+        }
+
+        .small img:last-child {
+            margin-bottom: 0;
+        }
+
+        .wrap {
+            border: 5px solid #ba6925;
+            width: 149px;
+            height: 81px;
+            position: absolute;
+            border-radius: 5px;
+            top: -5px;
+            left: -5px;
+            z-index: 100;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="big">
+            <img src="./images/t1.png">
+            <img src="images/t2.png">
+            <img src="images/t3.png">
+            <img src="images/t4.png">
+            <img src="images/t5.png">
+
+        </div>
+
+        <div class="small">
+            <div class="wrap"></div>
+            <img src="images/t1.png" class="active">
+            <img src="images/t2.png">
+            <img src="images/t3.png">
+            <img src="images/t4.png">
+            <img src="images/t5.png">
+
+        </div>
+    </div>
+    <script src="./animate.js"></script>
+    <script>
+        var bigimg = document.querySelector(".big img");
+        // console.log(bigimg);
+        var small = document.querySelectorAll(".small");
+        // console.log(small);
+        var smallimg = document.querySelectorAll(".small img")
+        console.log(smallimg);
+        var wrap = document.querySelector(".wrap");
+        // console.log(smallimg);
+        for (var i = 0; i < smallimg.length; i++) {
+            smallimg[i].dataset.index = i;
+
+            smallimg[i].onclick = function () {
+                var val = -5 + Number(this.dataset.index) * 113;
+                console.log(val);
+                animate(wrap, { top: val });
+                var big = document.querySelector(".big");
+                var vaL = -568 * this.dataset.index
+                animate(big, { marginTop: vaL })
+                for (var j = 0; j < smallimg.length; j++) {
+                    smallimg[j].style.opacity = 0.5
+                }
+                this.style.opacity = 1;
+
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
