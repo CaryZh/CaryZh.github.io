@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            background-color: pink;
+
+            width: 500px;
+            height: 500px;
+            position: relative;
+            margin: 50px auto;
+        }
+
+        button {
+            position: absolute;
+            top: 300px;
+            left: 200px;
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            font-size: 20px;
+            border: none;
+            color: aliceblue;
+            border-radius: 50%;
+        }
+
+        p {
+            display: inline-block;
+            width: 200px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 50px;
+            position: absolute;
+            top: 50px;
+            left: 150px;
+        }
+        li{
+            list-style: none;
+
+        }
+        button :hover{
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <p>
+            <li></li>
+        </p>
+        <button>获取</button>
+    </div>
+    <script>
+        'use strict';
+
+        class GLRandom {
+            /**
+             * 构造函数
+             * @param {number} min  最小整数值
+             * @param {number} max  最大整数值
+             * @param {Map} percentage 概率数 [值,百分比]
+             */
+            constructor(min, max, percentage = new Map()) {
+                this.min = Math.trunc(min);
+                this.max = Math.trunc(max);
+                this.MATH_RANGE = 100;  // 分成100份
+                this.percentage = percentage;
+            }
+
+            get percentage() {
+                if (!this._percentage) {
+                    this._percentage = new Map();
+                }
+                return this._percentage;
+            }
+
+            /**
+             * 分配比例
+             * @param {Map} map 设置 值-百分比
+             */
+            set percentage(map) {
+                let result = Array.from(map.values()).reduce((p, v, a) => {
+                    return p - v;
+                }, 1);
+                for (let i = this.min; i < this.max; i++) {
+                    if (map.has(i)) {
+                        this.percentage.set(i, map.get(i));
+                    } else {
+                        this.percentage.set(i, result / (this.max - this.min - map.size));
+                    }
+                }
+            }
+
+            /**
+             * 根据比例生成取值范围
+             */
+            range() {
+                let [start, random, keys] = [0, this.MATH_RANGE, Array.from(this.percentage.keys())];
+                for (let i = 0; i < keys.length; i++) {
+                    let temp = this.percentage.get(keys[i]);
+                    this.percentage.set(keys[i], [start, start += temp * random]);
+                }
+            }
+
+            /**
+             * 生成随机数
+             */
+            create() {
+                let num = Math.random() * this.MATH_RANGE;
+                for (let data of this.percentage.entries()) {
+                    if (num >= data[1][0] && num < data[1][1]) {
+                        return data[0];
+                    }
+                }
+                return null;
+            }
+        }
+    </script>
+
+    <script>
+        // var box = document.querySelector(".box");
+        // var btn = document.querySelector("button");
+        // var p = document.querySelector("p");
+        // var arr = ["马代", "埃及", "巴黎", "威尼斯", "冰岛", "爱情"];
+        // btn.onclick = function () {
+        //     var newtext = document.createElement("li")
+        //     // p.remove(newtext);
+        //     // for (var i = 0; i < arr.length; i++) {
+        // window.setInterval(function () {
+        //     console.log(arr);
+        //         // return document.write(arr(Math.round(Math.random()*arr.length))); 
+        //         var index = Math.round(Math.random() *arr.length);
+        //         console.log(index);
+        //         // document.write(arr[index]);
+        //         newtext.innerHTML = arr[index];
+        //         p.appendChild(newtext);
+        //         // console.log(li);
+        //     }, 3000)
+        // } 
+        // p.replaceChild(); 
+
+        // 随机数范围 ：40~900
+        var random = new GLRandom(0, 5);
+        // 调整概率
+        random.percentage = new Map([
+            [0, 0.32],   
+            [1, 0.25],  
+            [2, 0.2],  
+            [3, 0.125],
+            [4, 0.064],
+            // [6,0.041],
+        ]);
+
+        // 生成值区间
+        random.range();
+
+        // 生成概率随机数
+        console.log(random.create());
+
+        // }
+        var box = document.querySelector(".box");
+        var btn = document.querySelector("button");
+        var p = document.querySelector("p");
+        var arr = ["巴黎", "威尼斯", "埃及", "冰岛", "爱琴海", "马尔代夫"];
+        function one(fn) {
+            var flag = true;
+            return function () {
+                if (flag) {
+                    flag = false;
+                    fn.apply(this, arguments)
+                }
+            }
+        }
+        btn.onclick = one(function () {
+            var newtext = document.createElement("li")
+            // p.remove(newtext);
+            // for (var i = 0; i < arr.length; i++) {
+            window.setInterval(function () {
+                // console.log(arr);
+                // return document.write(arr(Math.round(Math.random()*arr.length))); 
+                var index = random.create();
+                console.log(index);
+                // document.write(arr[index]);
+                newtext.innerHTML = arr[index];
+                p.appendChild(newtext);
+                // console.log(li);
+            }, 10000)
+        } )
+    </script>
+</body>
+
+</html>
