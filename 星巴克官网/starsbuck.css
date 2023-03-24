@@ -1,0 +1,475 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+}
+html body .box #leftlist {
+  width: 30vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 9999;
+  background-color: #fff;
+}
+html body .box #leftlist .bigBox {
+  position: relative;
+  height: 100%;
+}
+html body .box #leftlist .bigBox .beforeit {
+  display: block;
+  height: 100%;
+}
+html body .box #leftlist .bigBox .beforeit .container .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+}
+html body .box #leftlist .bigBox .beforeit .container .head .left {
+  display: flex;
+  align-items: center;
+}
+html body .box #leftlist .bigBox .beforeit .container .head .left .logo {
+  margin-right: 12px;
+}
+html body .box #leftlist .bigBox .beforeit .container .head .left .logo img {
+  display: block;
+  width: 36px;
+  height: 36px;
+}
+html body .box #leftlist .bigBox .beforeit .container .head .left #headnav ul {
+  margin: 0;
+}
+html body .box #leftlist .bigBox .beforeit .container .head .left #headnav ul li {
+  font-weight: bolder;
+  padding: 1rem;
+  padding-top: 1rem;
+  font-size: 1.6rem;
+  display: inline-block;
+}
+html body .box #leftlist .bigBox .beforeit .container:hover {
+  cursor: pointer;
+}
+html body .box #leftlist .bigBox .beforeit .listlogo img {
+  display: block;
+  width: 24px;
+}
+html body .box #leftlist .bigBox .beforeit .middle {
+  padding: 0;
+  height: 100%;
+  margin-top: -85px;
+  padding-left: 84px;
+  padding-right: 32px;
+  display: flex;
+  align-items: center;
+}
+html body .box #leftlist .bigBox .beforeit .middle h2 {
+  font-weight: bolder;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+html body .box #leftlist .bigBox .beforeit .middle .flex {
+  display: flex;
+}
+html body .box #leftlist .bigBox .beforeit .middle .login {
+  color: #00a862;
+  margin-right: 10px;
+}
+html body .box #leftlist .bigBox .beforeit .middle .login span {
+  font-size: 1.4rem;
+}
+html body .box #leftlist .bigBox .beforeit .middle .login:hover {
+  cursor: pointer;
+}
+html body .box #leftlist .bigBox .beforeit .middle button {
+  width: 6rem;
+  height: 3rem;
+  border: 0.1rem solid #00a862;
+  border-radius: 48px;
+  color: #00a862;
+  background-color: transparent;
+  font-size: 1.4rem;
+  justify-content: center;
+}
+html body .box #leftlist .bigBox .afterit {
+  overflow-y: scroll;
+  height: 100vh;
+  display: none;
+}
+html body .box #leftlist .bigBox .afterit:hover {
+  cursor: pointer;
+}
+html body .box #leftlist .bigBox .afterit .uper {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+}
+html body .box #leftlist .bigBox .afterit .uper .uplogo {
+  width: 36px;
+  height: 36px;
+}
+html body .box #leftlist .bigBox .afterit .uper .uplist {
+  width: 17px;
+  height: 18px;
+  padding: 2rem;
+}
+html body .box #leftlist .bigBox .afterit .middlelist {
+  display: flex;
+  padding: 5rem;
+  padding-right: 2rem;
+  justify-content: flex-start;
+}
+html body .box #leftlist .bigBox .afterit .middlelist .center {
+  flex: 1;
+}
+html body .box #leftlist .bigBox .afterit .middlelist .center ul {
+  list-style: none;
+}
+html body .box #leftlist .bigBox .afterit .middlelist .center ul li {
+  font-size: 18px;
+  font-weight: 900;
+  margin: 1rem;
+}
+html body .box #leftlist .bigBox .afterit .middlelist .center .flex {
+  display: flex;
+}
+html body .box #leftlist .bigBox .afterit .middlelist .center .flex .login {
+  color: #00a862;
+  margin: 10px;
+}
+html body .box #leftlist .bigBox .afterit .middlelist .center .flex .login img {
+  width: 28px;
+  height: 28px;
+}
+html body .box #leftlist .bigBox .afterit .middlelist .center .flex .login span {
+  font-size: 1rem;
+}
+html body .box #leftlist .bigBox .afterit .middlelist .center .flex .login:hover {
+  cursor: pointer;
+}
+html body .box #leftlist .bigBox .afterit .middlelist .center .flex button {
+  width: 6rem;
+  height: 3rem;
+  border: 0.1rem solid #00a862;
+  border-radius: 48px;
+  color: #00a862;
+  background-color: transparent;
+  font-size: 1.4rem;
+  margin: 9px;
+}
+html body .box #leftlist .bigBox .afterit .lasttest .doc {
+  margin-left: 10rem;
+}
+html body .box #leftlist .bigBox .afterit .lasttest .doc span {
+  font-size: 1.8rem;
+  color: #9e9e9e;
+}
+html body .rightBox {
+  display: flex;
+  justify-content: right;
+}
+html body .right {
+  width: 70vw;
+}
+html body .right .topbox {
+  width: 70vw;
+}
+html body .right .topbox #carouselExampleInterval .guanggao {
+  z-index: 500;
+  color: white;
+  background-color: #000;
+  width: 3.5rem;
+  height: 2.5rem;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  text-align: center;
+  line-height: 2.5rem;
+  border-radius: 10%;
+  opacity: 0.6;
+}
+html body .right .topbox #carouselExampleInterval .carousel-control-next {
+  overflow: hidden;
+  transform: translateX(-1rem);
+  transition: 0.4s;
+}
+html body .right .topbox #carouselExampleInterval .carousel-control-next .carousel-control-next-icon {
+  background-image: url(https://www-static.chinacdn.starbucks.com.cn/prod/assets/icons/icon-arrow-white.svg);
+  width: 5rem;
+  height: 5rem;
+}
+html body .right .topbox #carouselExampleInterval .carousel-control-next:hover {
+  transform: translateX(0);
+  cursor: pointer;
+}
+html body .right .middlebox {
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem 0;
+  background-color: #f7f7f7;
+}
+html body .right .middlebox .imgbox {
+  width: 30%;
+}
+html body .right .middlebox .imgbox img {
+  width: 100%;
+  border-radius: 1%;
+  box-shadow: 0 2px 0 0 rgba(159, 157, 157, 0.5);
+}
+html body .right .middlebox .imgbox img:hover {
+  cursor: pointer;
+  transform: translateY(-0.5rem);
+  box-shadow: 1px 1px 10px 3px rgba(199, 195, 195);
+  transition: 0.4s;
+}
+html body .right .middletitle {
+  display: flex;
+  justify-content: space-evenly;
+}
+html body .right .middletitle .wrapper {
+  padding: 3rem;
+}
+html body .right .middletitle .wrapper h2 {
+  margin-bottom: 2rem;
+}
+html body .right .middletitle .wrapper p {
+  display: block;
+  width: 350px;
+  line-height: 3rem;
+  color: #a5a5a5;
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+html body .right .middletitle .wrapper p a {
+  color: #c6a661;
+  text-decoration: none;
+}
+html body .right .middletitle .wrapper .btn {
+  width: 6rem;
+  height: 3rem;
+  border: 0.1rem solid #00a862;
+  border-radius: 48px;
+  color: #00a862;
+  background-color: transparent;
+  font-size: 1.4rem;
+  justify-content: center;
+  margin-left: 0.5rem;
+}
+html body .right .middletitle .img {
+  display: flex;
+  align-items: center;
+}
+html body .right .middletitle .img img {
+  display: block;
+}
+html body .right .jingxuan {
+  background-color: #f7f7f7;
+  padding: 5rem;
+}
+html body .right .jingxuan .toptitle {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+html body .right .jingxuan .toptitle h2 {
+  margin-top: 1rem;
+}
+html body .right .jingxuan .toptitle p {
+  margin: 2rem;
+  margin-bottom: 5rem;
+  font-size: 1.6rem;
+  color: #989898;
+}
+html body .right .jingxuan .photo {
+  display: flex;
+  justify-content: space-evenly;
+}
+html body .right .jingxuan .photo .photobox {
+  text-align: center;
+  position: relative;
+  box-shadow: 0 2px 0 0 rgba(159, 157, 157, 0.5);
+}
+html body .right .jingxuan .photo .photobox img {
+  height: 72px;
+  z-index: 99;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -40px;
+}
+html body .right .jingxuan .photo .photobox .card {
+  padding: 2em;
+  padding-bottom: 3.5rem;
+}
+html body .right .jingxuan .photo .photobox .card h3 {
+  margin: 2rem;
+  font-weight: bolder;
+}
+html body .right .jingxuan .photo .photobox .card p {
+  display: block;
+  margin-left: 1rem;
+  width: 10rem;
+  font-size: 1.4rem;
+  color: #9f9f9f;
+}
+html body .right .jingxuan .photo .photobox .card p .small {
+  display: block;
+}
+html body .right .jingxuan .photo .photobox .card a {
+  margin-top: 1.5rem;
+  color: #c6a661;
+  text-decoration: none;
+}
+html body .right .jingxuan .photo .photobox:hover {
+  cursor: pointer;
+  transform: translateY(-0.5rem);
+  box-shadow: 1px 1px 5px px rgba(199, 195, 195);
+  transition: 0.4s;
+}
+html body .right .coffeehouse .wrappercenter {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+html body .right .coffeehouse .wrappercenter h2 {
+  margin-top: 10rem;
+}
+html body .right .coffeehouse .wrappercenter p {
+  margin: 2.5rem;
+  font-size: 1.6rem;
+  color: #b0b7b6;
+}
+html body .right .coffeehouse .wrapper {
+  overflow: hidden;
+  position: relative;
+}
+html body .right .coffeehouse .wrapper .leftbutton {
+  background-color: #ffffff;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 100px;
+  left: 50px;
+  border: 1px solid #dadcdd;
+  transform: translateX(0.5rem);
+  display: none;
+  z-index: 1;
+}
+html body .right .coffeehouse .wrapper .leftbutton img {
+  text-align: center;
+  width: 18px;
+  height: 18px;
+  margin: 5px;
+}
+html body .right .coffeehouse .wrapper .leftbutton:hover {
+  transform: translateX(-0.5rem);
+  box-shadow: 1px 1px 1px 1px #e2e2e2;
+  transition: 0.5s;
+  cursor: pointer;
+}
+html body .right .coffeehouse .wrapper .rightbutton {
+  background-color: #ffffff;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 110px;
+  right: 40px;
+  border: 1px solid #dadcdd;
+  transform: translateX(-0.5rem);
+}
+html body .right .coffeehouse .wrapper .rightbutton img {
+  text-align: center;
+  width: 18px;
+  height: 18px;
+  margin: 5px;
+}
+html body .right .coffeehouse .wrapper .rightbutton:hover {
+  transform: translateX(0.5rem);
+  box-shadow: 1px 1px 1px 1px #e2e2e2;
+  transition: 0.5s;
+  cursor: pointer;
+}
+html body .right .coffeehouse .wrapper .scorllwrapper {
+  display: flex;
+  justify-content: space-evenly;
+  transform: translateX(30rem);
+  transition: 0.5s;
+}
+html body .right .coffeehouse .wrapper .scorllwrapper .photobox {
+  position: relative;
+  border: 1px solid #e2e2e2;
+  border-radius: 2px;
+  width: 288px;
+  margin: 10px;
+}
+html body .right .coffeehouse .wrapper .scorllwrapper .photobox .photosone {
+  background-image: url(images/coffeehouse-coffee-cultivation-kv.jpg);
+  height: 168px;
+  width: 280px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+html body .right .coffeehouse .wrapper .scorllwrapper .photobox span {
+  position: absolute;
+  background-color: #c2a661;
+  color: #fff;
+  display: inline-block;
+  width: 8rem;
+  height: 3rem;
+  text-align: center;
+  line-height: 3rem;
+  font-size: 1.4rem;
+  top: 1rem;
+  left: 0;
+}
+html body .right .coffeehouse .wrapper .scorllwrapper .photobox strong {
+  display: inline-block;
+  padding: 2rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+html body .right .coffeehouse .wrapper .scorllwrapper .photobox .photostwo {
+  background-image: url(images/coffeehouse-4-fundamentals-kv.jpg);
+  height: 16.8rem;
+  width: 288px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+html body .right .coffeehouse .wrapper .scorllwrapper .photobox .photosthree {
+  background-image: url(images/coffeehouse-roast-story-kv.jpg);
+  height: 16.8rem;
+  width: 288px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+html body .right .coffeehouse .wrapper .scorllwrapper .photobox .photosfour {
+  background-image: url(images/coffeehouse-pour-over-kv.jpg);
+  height: 16.8rem;
+  width: 288px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+html body .right .coffeehouse .wrapper .scorllwrapper .photobox:hover {
+  cursor: pointer;
+  transform: translateY(-0.5rem);
+  box-shadow: 1px 1px 3px 1px rgba(199, 195, 195);
+  transition: 0.4s;
+}
+html body .right .text {
+  margin: 2rem;
+  margin-left: 40%;
+}
+html body .right .text img {
+  width: 10px;
+  height: 10px;
+}
+html body .right .text span {
+  font-size: 1.6rem;
+}
+/*# sourceMappingURL=./starsbuck.css.map */
