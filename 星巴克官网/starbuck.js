@@ -40,5 +40,16 @@ leftlist.onclick=function(){
 leftclose.onclick=function(){
     afterlist.style.display="none";
     beforelist.style.display="block";
-}
+    rightlist.style.display="block";
 
+
+}
+// 下面
+var downbtn = document.querySelectorAll(".procket")[4];
+var rightlist = document.querySelector(".rightBox");
+console.log(downbtn);
+downbtn.onclick=function () {
+    console.log(123);
+    afterlist.style.display="block";
+    rightlist.style.display="none";
+}
